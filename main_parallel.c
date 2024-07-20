@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "thpool.h"
+#include <thpool.h>
 
 // ---- thread management code start ----
 
