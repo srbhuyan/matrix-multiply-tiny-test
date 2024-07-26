@@ -2,12 +2,12 @@
 
 usage()
 {
-  echo "Usage: $0 <serial algorithm> <parallel algirithm> <iva> <iva data> <iva data file> <core count file> <time serial analytics file> <time parallel analytics file> <space serial analytics file> <space parallel analytics file> <power serial analytics file> <power parallel analytics file> <energy serial analytics file> <energy parallel analytics file> <speedup analytics file> <freeup analytics file> <powerup analytics file> <energyup analytics file> <id> <repo> <start time>"
+  echo "Usage: $0 <serial algorithm> <parallel algirithm> <iva> <iva data> <iva data file> <core count file> <time serial analytics file> <time parallel analytics file> <space serial analytics file> <space parallel analytics file> <power serial analytics file> <power parallel analytics file> <energy serial analytics file> <energy parallel analytics file> <speedup analytics file> <freeup analytics file> <powerup analytics file> <energyup analytics file> <id> <repo> <start time> <progress>"
   exit 1
 }
 
-if [ "$#" -ne 21 ]; then
-    echo "Invalid number of parameters. Expected:21 Passed:$#"
+if [ "$#" -ne 22 ]; then
+    echo "Invalid number of parameters. Expected:22 Passed:$#"
     usage
 fi
 
@@ -32,6 +32,7 @@ energyup_analytics_file=${18}
 id=${19}
 repo=${20}
 start_time=${21}
+start_time=${22}
 
 serial_measurement=serial.csv
 parallel_measurement=parallel.csv
@@ -80,7 +81,6 @@ power_serial=()
 energy_serial=()
 
 # time - serial
-progress=20
 progress_bandwidth=10
 
 for i in ${iva[@]}
