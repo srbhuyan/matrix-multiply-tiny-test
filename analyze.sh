@@ -32,7 +32,7 @@ energyup_analytics_file=${18}
 id=${19}
 repo=${20}
 start_time=${21}
-start_time=${22}
+progress=${22}
 
 serial_measurement=serial.csv
 parallel_measurement=parallel.csv
