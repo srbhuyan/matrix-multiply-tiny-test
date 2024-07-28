@@ -97,7 +97,7 @@ do
   echo "{\"currentStep\":\"Serial Time Measurement\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"Serial Memory Measurement\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 done
 
 # memory - serial
@@ -116,7 +116,7 @@ do
   echo "{\"currentStep\":\"Serial Memory Measurement\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"Serial Power Measurement\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 done
 
 # power - serial
@@ -133,7 +133,7 @@ do
   echo "{\"currentStep\":\"Serial Power Measurement\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"Parallel Time Measurement\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 done
 
 # energy - serial
@@ -172,7 +172,7 @@ do
   echo "{\"currentStep\":\"Parallel Time Measurement\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"Parallel Memory Measurement\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 done
 
 # memory - parallel
@@ -191,7 +191,7 @@ do
   echo "{\"currentStep\":\"Parallel Memory Measurement\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"Parallel Power Measurement\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 done
 
 # power - parallel
@@ -208,7 +208,7 @@ do
   echo "{\"currentStep\":\"Parallel Power Measurement\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"Serial Polynomial Generation\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 done
 
 # energy - parallel
@@ -307,7 +307,7 @@ fit.py --in-file time-serial.json --out-file time-serial-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file time-parallel.json --out-file time-parallel-fitted.json
 
@@ -316,7 +316,7 @@ fit.py --in-file time-parallel.json --out-file time-parallel-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file space-serial.json --out-file space-serial-fitted.json
 
@@ -325,7 +325,7 @@ fit.py --in-file space-serial.json --out-file space-serial-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file space-parallel.json --out-file space-parallel-fitted.json
 
@@ -334,7 +334,7 @@ fit.py --in-file space-parallel.json --out-file space-parallel-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file power-serial.json --out-file power-serial-fitted.json
 
@@ -343,7 +343,7 @@ fit.py --in-file power-serial.json --out-file power-serial-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file power-parallel.json --out-file power-parallel-fitted.json
 
@@ -352,7 +352,7 @@ fit.py --in-file power-parallel.json --out-file power-parallel-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file energy-serial.json --out-file energy-serial-fitted.json
 
@@ -361,7 +361,7 @@ fit.py --in-file energy-serial.json --out-file energy-serial-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file energy-parallel.json --out-file energy-parallel-fitted.json
 
@@ -370,7 +370,7 @@ fit.py --in-file energy-parallel.json --out-file energy-parallel-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file speedup.json --out-file speedup-fitted.json
 
@@ -379,7 +379,7 @@ fit.py --in-file speedup.json --out-file speedup-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file freeup.json --out-file freeup-fitted.json
 
@@ -388,7 +388,7 @@ fit.py --in-file freeup.json --out-file freeup-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file powerup.json --out-file powerup-fitted.json
 
@@ -397,7 +397,7 @@ fit.py --in-file powerup.json --out-file powerup-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 fit.py --in-file energyup.json --out-file energyup-fitted.json
 
@@ -406,7 +406,7 @@ fit.py --in-file energyup.json --out-file energyup-fitted.json
   echo "{\"currentStep\":\"Predictive Model Generation\",\"endTime\":\"\",\
   \"errorCode\":0,\"id\":\"$id\",\"message\":\"\",\"nextStep\":\"None\",\
   \"progress\":$progress,\"repo\":\"$repo\",\"repoName\":\"$repo_name\",\
-  \"startTime\":\"$start_time\",\"status\":\"In progress\",\"result\":{\"repo\":\"$repo\"}}" > $analysis_file
+  \"startTime\":\"$start_time\",\"status\":\"In progress\"}" > $analysis_file
 
 # time serial
 jo -p \
