@@ -2,12 +2,12 @@
 
 usage()
 {
-  echo "Usage: $0 <serial algorithm> <parallel algirithm> <iva> <iva data> <iva data file> <core count file> <time serial analytics file> <time parallel analytics file> <space serial analytics file> <space parallel analytics file> <power serial analytics file> <power parallel analytics file> <energy serial analytics file> <energy parallel analytics file> <speedup analytics file> <freeup analytics file> <powerup analytics file> <energyup analytics file> <id> <repo> <start time> <progress>"
+  echo "Usage: $0 <serial algorithm> <parallel algirithm> <iva> <iva data> <iva data file> <core count file> <time serial analytics file> <time parallel analytics file> <space serial analytics file> <space parallel analytics file> <power serial analytics file> <power parallel analytics file> <energy serial analytics file> <energy parallel analytics file> <speedup analytics file> <freeup analytics file> <powerup analytics file> <energyup analytics file> <id> <remote> <repo> <start time> <progress>"
   exit 1
 }
 
-if [ "$#" -ne 22 ]; then
-    echo "Invalid number of parameters. Expected:22 Passed:$#"
+if [ "$#" -ne 23 ]; then
+    echo "Invalid number of parameters. Expected:23 Passed:$#"
     usage
 fi
 
@@ -30,9 +30,10 @@ freeup_analytics_file=${16}
 powerup_analytics_file=${17}
 energyup_analytics_file=${18}
 id=${19}
-repo=${20}
-start_time=${21}
-progress=${22}
+remote=${20}
+repo=${21}
+start_time=${22}
+progress=${23}
 
 serial_measurement=serial.csv
 parallel_measurement=parallel.csv
