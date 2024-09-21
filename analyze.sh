@@ -40,6 +40,17 @@ serial_measurement=serial.csv
 parallel_measurement=parallel.csv
 analysis_file=analysis.json
 
+# parallel code generation config
+parallel_plugin_so=MyRewriter.so
+parallel_plugin_name=rew
+main_serial=main_serial.c
+main_parallel=main_parallel.c
+target_function=mult
+iva_name=r
+iva_start=rStart
+iva_end=rEnd
+argc=2
+
 # cleanup
 rm $time_serial_analytics_file 2> /dev/null
 rm $time_parallel_analytics_file 2> /dev/null
@@ -77,6 +88,9 @@ for i in ${core_arr[@]}
 do
   core+=($i)
 done
+
+# generate TALP parallel code
+clang -fplugin=$parallel_plugin_so -Xclang -plugin -Xclang $parallel_plugin_name -Xclang -plugin-arg-rew -Xclang -target-function -Xclang -plugin-arg-rew -Xclang $target_function -Xclang -plugin-arg-rew -Xclang -out-file -Xclang -plugin-arg-rew -Xclang $main_parallel -Xclang -plugin-arg-rew -Xclang -iva -Xclang -plugin-arg-rew -Xclang $iva_name -Xclang -plugin-arg-rew -Xclang -iva-start -Xclang -plugin-arg-rew -Xclang $iva_start -Xclang -plugin-arg-rew -Xclang -iva-end -Xclang -plugin-arg-rew -Xclang $iva_end -Xclang -plugin-arg-rew -Xclang -argc -Xclang -plugin-arg-rew -Xclang $argc -c $main_serial
 
 # make
 make
@@ -354,7 +368,7 @@ fit.py --in-file power-serial.json --out-file power-serial-fitted.json
   \"nextStep\":\"None\",\"percent\":$progress},\
   \"result\":{\"errorCode\":0,\"message\":\"\",\"repo\":\"\"}}" > $analysis_file
 
-fit.py --in-file power-parallel.json --out-file power-parallel-fitted.json
+fit.py --in-file power-parallel.json --out-file power-parallel-fitted.json --error-threshold 2
 
   progress=`echo "scale=1; p=$progress; bw=$progress_bandwidth; l=$fit_count; p + (bw/l)" | bc -l`
 
@@ -372,7 +386,7 @@ fit.py --in-file energy-serial.json --out-file energy-serial-fitted.json
   \"nextStep\":\"None\",\"percent\":$progress},\
   \"result\":{\"errorCode\":0,\"message\":\"\",\"repo\":\"\"}}" > $analysis_file
 
-fit.py --in-file energy-parallel.json --out-file energy-parallel-fitted.json
+fit.py --in-file energy-parallel.json --out-file energy-parallel-fitted.json --error-threshold 2
 
   progress=`echo "scale=1; p=$progress; bw=$progress_bandwidth; l=$fit_count; p + (bw/l)" | bc -l`
 
@@ -381,7 +395,7 @@ fit.py --in-file energy-parallel.json --out-file energy-parallel-fitted.json
   \"nextStep\":\"None\",\"percent\":$progress},\
   \"result\":{\"errorCode\":0,\"message\":\"\",\"repo\":\"\"}}" > $analysis_file
 
-fit.py --in-file speedup.json --out-file speedup-fitted.json
+fit.py --in-file speedup.json --out-file speedup-fitted.json --error-threshold 2
 
   progress=`echo "scale=1; p=$progress; bw=$progress_bandwidth; l=$fit_count; p + (bw/l)" | bc -l`
 
@@ -408,7 +422,7 @@ fit.py --in-file powerup.json --out-file powerup-fitted.json
   \"nextStep\":\"None\",\"percent\":$progress},\
   \"result\":{\"errorCode\":0,\"message\":\"\",\"repo\":\"\"}}" > $analysis_file
 
-fit.py --in-file energyup.json --out-file energyup-fitted.json
+fit.py --in-file energyup.json --out-file energyup-fitted.json --error-threshold 2
 
   progress=`echo "scale=1; p=$progress; bw=$progress_bandwidth; l=$fit_count; p + (bw/l)" | bc -l`
 
